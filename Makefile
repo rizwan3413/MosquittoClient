@@ -16,9 +16,6 @@ LIB_CXXFLAGS:=$(CXXFLAGS)
 LIB_LDFLAGS:=$(LDFLAGS) 
 LIB_LIBADD:=$(LIBADD) -lpthread -lmosquittopp 
 
-LIB_CFLAGS:=$(LIB_CFLAGS) -fPIC -fPIE
-LIB_CXXFLAGS:=$(LIB_CXXFLAGS) -fPIC -fPIE
-
 ifeq ($(UNAME),Linux)
 	LIB_LIBADD:=$(LIB_LIBADD) -lrt
 endif
