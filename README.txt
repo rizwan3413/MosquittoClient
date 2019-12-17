@@ -28,7 +28,7 @@ Procedure:
 
 - Follow the below steps for testing BLE and GNSS Data
 
-**********************BLE DATA******************************************************************************************************************************
+**********************BLE DATA**************************************************************************************************
 
 - Open 2 terminals and in one terminal type the following command
 
@@ -41,7 +41,7 @@ Procedure:
   mosquitto_pub -t app/server/ble -m data,deviceId=n2_190225_0038,wheelbasedvehiclespeed=529.219,vin=na,enginespeed=1086,enginehours=2973.15,mileagetrue=67019415,enginemove=0,enginestatus=0,gearposition=1
 
 
-**********************GNSS DATA****************************************************************************************************************************
+**********************GNSS DATA****************************************************************************************************
 
 - Open 2 terminals and in one terminal type the following command
 
