@@ -51,7 +51,7 @@ void DataObserver::on_connect(int rc)
 }
 
 /*****************************************************************************************
- * On Message Callback. Called on recieving message on app/hr/blecan and app/hr/blegnss topic
+ * On Message Callback. Called on recieving message on app/server/ble and app/server/gnss topic
 *****************************************************************************************/
 void DataObserver::on_message(const struct mosquitto_message *message)
 {
@@ -61,12 +61,12 @@ void DataObserver::on_message(const struct mosquitto_message *message)
 
     if(topic_name.compare(TOPIC_DATA_BLE_SUB) == 0 ) {
         storeBleData(dataStr);
-        send_message(TOPIC_DATA_BLE_SUB, bleData);
+        send_message(TOPIC_DATA_BLE_PUB, bleData);
     }
 
     else if (topic_name.compare(TOPIC_DATA_GNSS_SUB) == 0) {
         storeGnssData(dataStr);
-        send_message(TOPIC_DATA_GNSS_SUB, gnssData);
+        send_message(TOPIC_DATA_GNSS_PUB, gnssData);
     }
    
     else {
@@ -119,7 +119,7 @@ void DataObserver::storeGnssData(std::vector<std::string> &dataStr) {
 }
 
 /*****************************************************************************************
- * On subscribe callback. Called on successfull subscription on topic
+ * On subscribe callback. Called on successfull sub/scription on topic
 *****************************************************************************************/
 void DataObserver::on_subscribe(int mid, int qos_count, const int *granted_qos)
 {
